@@ -1,0 +1,122 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Je t'aime &hearts;</title>
+	<script
+	  src="https://code.jquery.com/jquery-2.2.4.min.js"
+	  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+	html, body{
+		background-color: #e74c3c;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		font-family: Open Sans Condensed,arial,serif;
+	}
+	#center,.cache,#center_code{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		width: 100px;
+		height: 100px;
+	}
+	#center_code{display: none; width: 600px; height: 500px;}
+	h1{display: none; color: #fefefe; text-align: center; position: relative; top: 30%;}
+	h1:hover{cursor: pointer;}
+	.cache{
+		background-color: #e74c3c;
+		z-index: 99;
+	}
+	.contain_part{
+		background-color: #e74c3c;
+	}
+	.part2{
+		position: relative;
+		bottom: -10px;
+		z-index: 99;
+	}
+	.part1{
+		position: relative;
+		z-index: 99;
+	}
+	.part1:hover,.part2:hover{cursor: pointer;}
+	.coeur{
+		position: relative;
+		z-index: 80;
+		top: 46px;
+	}
+	pre{color: #ededed;}
+	.var{color:#3498db;}
+	.nb{color:#9b59b6;}
+	.function{color:#2ecc71;}
+	.return{color:#e74c3c;}
+	</style>
+</head>
+<body>
+<div id="center">
+	<div class="cache">
+		<img class="part2" src="cadeau_part2.png" width="100"/>
+		<div class="contain_part"><img class="part1" src="cadeau_part1.png" width="100"/></div>
+	</div>
+	<img class="coeur" src="coeur2.png" width="100"/>
+</div>
+<!--<div id="center_code">
+	<pre><code>
+	<span class="var">var</span> jb;
+	function <span class="function">ace()</span>{
+		<span class="var">var</span> ace = <span class="return">false</span>;
+		if(ace == false){
+			<span class="var">var</span> coupleSimple = <span class="nb">1</span>;
+			for(<span class="var">var</span> u = <span class="nb">0</span>;u<span><</span>coupleSimple;u++){
+				ace = true;
+				<span class="return">return u</span>;
+			}
+		}
+		if(ace && u == <span class="nb">1</span>){
+			amoureux();
+		}
+		<span class="return">return false</span>;
+	};
+	function <span class="function">amoureux()</span>{
+		$(jb).append("Je t'aime mon amour &hearts;");
+	};
+	</code></pre>
+</div>-->
+<h1>Je t'aime mon amour ;)</h1>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$('.cache').hover(function(){
+		$(this).css({'background-color':'transparent'});
+		$('.part2').animate({'bottom':'50px'},500);
+		$('.coeur').animate({'top':'10px'},500);
+	}, function(){
+		$('.coeur').animate({'top':'40px'},500);
+		$('.part2').animate({'bottom':'-10px','z-index':'999'},500);
+	});
+
+	$('.cache').click(function(){
+		$('.part1,.part2').hide();
+		$('body').css({'background-color':'#1b1b1b'});
+		$('h1').show();
+		setInterval(function(){
+			// $('.coeur').animate({'top':'40px'},400).animate({'top':'30px'},400);
+			$('.coeur').effect('bounce',3000);
+		},1000);
+	});
+
+	//$('h1').click(function(){
+	//	$('#center, h1').hide();
+	//	$('#center_code').show();
+	//});
+});
+</script>
+</body>
+</html>
